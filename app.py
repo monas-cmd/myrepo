@@ -1,4 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from pymongo import MongoClient
+cluster = MongoClient("mongodb+srv://monas:171718@cluster0.abcab19.mongodb.net/?retryWrites=true&w=majority") 
+db = cluster["orders"]
+mycol = db["orders"]
 app = Flask(__name__)
 
 @app.route('/')
