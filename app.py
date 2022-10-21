@@ -16,6 +16,9 @@ def hello_world():
     z = []
     p = []
     style_sheet = os.path.join(app.config['UPLOAD_FOLDER'], 'css/style.min.css')
+    courier = os.path.join(app.config['UPLOAD_FOLDER'], 'plugins/images/users/pic0.png')
+    logoicon = os.path.join(app.config['UPLOAD_FOLDER'], 'plugins/images/logo-icon.png')
+    logotext = os.path.join(app.config['UPLOAD_FOLDER'], 'plugins/images/logo-text.png')
     for x in mycol.find():
         z.append(x)
     pokemons =[]
@@ -31,6 +34,6 @@ def hello_world():
     for i in agg_result: 
         p.append(i)
    
-    return render_template("dashboard.html",p = p, lenz = len(pokemons), style_sheet = style_sheet, pokemons = pokemons, len = len(z), z = z)
+    return render_template("dashboard.html",p = p, lenz = len(pokemons), style_sheet = style_sheet, pokemons = pokemons, len = len(z), z = z, courier = courier, logotext= logotext, logoicon=logoicon)
 if __name__ == '__main__':
     app.run()
