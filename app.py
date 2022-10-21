@@ -7,6 +7,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    z = []
+    p = []
+    for x in mycol.find():
+        z.append(x)
+    return render_template('index.html', z = str(z) )
 if __name__ == '__main__':
     app.run()
